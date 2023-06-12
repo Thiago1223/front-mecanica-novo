@@ -3,7 +3,7 @@
 import { carregarCardCurso, insertCardCurso, updateCardCurso, deleteCardCurso } from "./course.js"
 import { carregarCardTurma } from "./class.js"
 import { carregarCardDisciplina } from "./discipline.js"
-import { carregarProfessor, criarHeaderProfessor } from "./teacher.js"
+import { carregarProfessor } from "./teacher.js"
 import { carregarAluno } from "./student.js"
 // import { carregarCardTarefa } from "./tasks.js"
 
@@ -40,8 +40,7 @@ const route = async () => {
     } else if (window.location.pathname == '/discipline') {
         carregarCardDisciplina()
     } else if (window.location.pathname == '/teachers') {
-         criarHeaderProfessor()
-         carregarProfessor()
+        carregarProfessor()
     } else if (window.location.pathname == '/student') {
         carregarAluno()
     }
