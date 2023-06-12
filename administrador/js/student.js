@@ -26,13 +26,17 @@ const criarAluno = (aluno) => {
     })
 
     const textContentEmail = document.createElement('li')
-    textContentEmail.classList.add('text-content-email')
+    textContentEmail.classList.add('text-content')
     textContentEmail.textContent = aluno.email
     textContentEmail.title = aluno.email
 
     const textContentClass = document.createElement('li')
     textContentClass.classList.add('text-content-class')
     textContentClass.textContent = 'DS2T'
+
+    const textContentDiscipline = document.createElement('li')
+    textContentDiscipline.classList.add('text-content')
+    textContentDiscipline.textContent = 'DS2T'
 
     const buttonsList = document.createElement('ul')
     buttonsList.classList.add('list-buttons')
