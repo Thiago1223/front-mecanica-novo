@@ -36,7 +36,7 @@
 }
 .list-buttons {
     display: flex;
-    width: 150px;
+    width: 200px;
     justify-content: center;
     gap: 10px;
 }
@@ -92,15 +92,27 @@
     font-size: 1.8rem;
 }
 .text-title-resultado-desejado {
-    width: 150px;
-    text-align: center;
+    width: 200px;
+    text-align: end;
 }
 .text-title-resultado-obtido {
-    width: 150px;
+    width: 200px;
     text-align: center;
 }
 .text-title-margem-de-erro {
-    width: 120px;
+    width: 200px;
+    text-align: center;
+}
+.text-title-avaliacao-aluno {
+    width: 200px;
+    text-align: center;
+}
+.text-title-avaliacao-professor {
+    width: 200px;
+    text-align: center;
+}
+.text-title-acao {
+    width: 200px;
     text-align: center;
 }
 .list-content{
@@ -117,28 +129,28 @@
     background-color: var(--secondary-color);
 }
 .text-content-criterio {
-    width: 210px;
+    width: 200px;
     text-align: start;
 }
 .text-content-resultado-desejado {
+    width: 100px;
+    text-align: start;
+}
+.text-content-resultado-obtido {
     width: 200px;
     text-align: center;
 }
-.text-content-resultado-obtido {
-    width: 100px;
-    text-align: end;
-}
 .text-content-margem-de-erro {
     width: 200px;
-    text-align: end;
+    text-align: center;
 }
 .text-content-avaliacao-aluno {
-    width: 140px;
-    text-align: end;
+    width: 200px;
+    text-align: center;
 }
 .text-content-avaliacao-professor {
-    width: 120px;
-    text-align: end;
+    width: 200px;
+    text-align: center;
 }
 /***********************************/
 .text-content-inicio {
@@ -371,6 +383,10 @@ span {
     .buttons-modal{
         gap: 32px;
     }
+    .buttons-container img {
+        width: 20px;
+        height: 20px;
+    }
     .save-modal{
         width: 110px;
         height: 32px;
@@ -424,16 +440,12 @@ span {
         padding: 0 16px;
     }
     .list-title{
-        font-size: .6rem;
+        font-size: .5rem;
+        gap: 10px;
     }
-    .text-title-resultado-desejado {
-        width: 50px;
-    }
-    .text-title-resultado-obtido {
-        width: 50px;
-    }
-    .text-title-margem-de-erro {
-        width: 50px;
+    .text-title-avaliacao-professor {
+        width: 100px;
+        align-items: center;
     }
     .list-content{
         height: 32px;
@@ -453,13 +465,14 @@ span {
     }
     .text-content-avaliacao-aluno {
         width: 100px;
-        text-align: end;
+        text-align: center;
     }
     .text-content-avaliacao-professor {
         width: 100px;
         text-align: center;
     }
     .list-buttons {
+        width: 100px;
         gap: 5px;
     }
     .buttons-container{
