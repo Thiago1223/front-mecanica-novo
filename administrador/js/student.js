@@ -19,6 +19,10 @@ const criarAluno = (aluno) => {
     linkRouteStudentName.setAttribute('href', '/task')
     linkRouteStudentName.textContent = aluno.nome
     linkRouteStudentName.onclick = route
+    linkRouteStudentName.addEventListener('click', () => {
+        localStorage.setItem('nomeAluno', aluno.nome)
+        localStorage.setItem('turmaAluno', 'DS2T')
+    })
 
     const textContentEmail = document.createElement('li')
     textContentEmail.classList.add('text-content')

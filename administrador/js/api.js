@@ -54,6 +54,7 @@ export const preencherDadosTurmas = async () => {
     return data.turmas
 }
 
+// ---------------- DISCIPLINAS --------------------------
 export const preencherDadosDisciplinas = async () => {
     const url = `http://localhost:8080/v1/mecanica/materias`
     const response = await fetch(url)
@@ -62,6 +63,7 @@ export const preencherDadosDisciplinas = async () => {
     return data.materia
 }
 
+// ---------------- TAREFAS ------------------------------
 export const preencherDadosTarefas = async () => {
     const url = `http://localhost:8080/v1/mecanica/tarefas`
     const response = await fetch(url)
