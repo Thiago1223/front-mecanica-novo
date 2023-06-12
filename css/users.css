@@ -43,7 +43,6 @@
 }
 .list-buttons {
     display: flex;
-    flex-direction: row;
     gap: 10px;
 }
 .buttons-container{
@@ -93,7 +92,7 @@
 }
 .list-title{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     font-weight: 700;
     border-bottom: 1px solid #000000;
     font-size: 1.8rem;
@@ -101,7 +100,7 @@
 .list-content{
     display: flex;
     width: 100%;
-    justify-content: space-around;
+    justify-content: space-between;
     height: 64px;
     align-items: center;
     font-weight: 500;
