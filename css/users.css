@@ -313,6 +313,11 @@ span {
     .text-content-email {
         display: none;
     }
+    .text-content-class {
+        font-size: .7rem;
+        width: 50px;
+        text-align: start;
+    }
     .container-student-link {
         font-size: .7rem;
         width: 100px;
