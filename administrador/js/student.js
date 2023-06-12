@@ -12,12 +12,13 @@ const criarAluno = (aluno) => {
     containerLinkStudent.classList.add('container-link-student')
 
     const containerLink = document.createElement('div')
-    containerLink.classList.add('container-link')
+    containerLink.classList.add('container-student-link')
 
     const linkRouteStudentName = document.createElement('a')
     linkRouteStudentName.classList.add('link-route-student')
     linkRouteStudentName.setAttribute('href', '/task')
     linkRouteStudentName.textContent = aluno.nome
+    linkRouteStudentName.title = aluno.nome
     linkRouteStudentName.onclick = route
     linkRouteStudentName.addEventListener('click', () => {
         localStorage.setItem('nomeAluno', aluno.nome)
@@ -27,6 +28,11 @@ const criarAluno = (aluno) => {
     const textContentEmail = document.createElement('li')
     textContentEmail.classList.add('text-content')
     textContentEmail.textContent = aluno.email
+    textContentEmail.title = aluno.email
+
+    const textContentClass = document.createElement('li')
+    textContentClass.classList.add('text-content-class')
+    textContentClass.textContent = 'DS2T'
 
     const textContentDiscipline = document.createElement('li')
     textContentDiscipline.classList.add('text-content')
@@ -43,7 +49,7 @@ const criarAluno = (aluno) => {
     buttonDelete.classList.add('button-delete')
     buttonDelete.textContent = 'Deletar'
    
-    contentList.append(containerLinkStudent, textContentEmail, textContentDiscipline, buttonsList)
+    contentList.append(containerLinkStudent, textContentEmail, textContentClass, buttonsList)
     containerLinkStudent.append(containerLink)
     containerLink.append(linkRouteStudentName)
     buttonsList.append(buttonEdit, buttonDelete)

@@ -15,9 +15,10 @@ const criarProfessor = (professor) => {
     const textContentEmail = document.createElement('li')
     textContentEmail.classList.add('text-content-email')
     textContentEmail.textContent = professor.email
+    textContentEmail.title = professor.email
 
     const textContentDiscipline = document.createElement('li')
-    textContentDiscipline.classList.add('text-content-name')
+    textContentDiscipline.classList.add('text-content-nife')
     textContentDiscipline.textContent = professor.nife
 
     const buttonsList = document.createElement('ul')

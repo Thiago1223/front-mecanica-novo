@@ -91,7 +91,7 @@
 }
 .list-title{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     font-weight: 700;
     border-bottom: 1px solid #000000;
     font-size: 1.8rem;
@@ -103,12 +103,12 @@
 .container-content{
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    justify-content: space-around;
     height: 64px;
     align-items: center;
     font-weight: 500;
     border-bottom: 1px solid #000000;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
 }
 .list-content:hover{
     background-color: var(--secondary-color);
@@ -186,9 +186,34 @@ span {
     display: flex;
     justify-content: center;
 }
-.container-link .text-content-name:hover {
+.container-student-link {
+    width: 200px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.container-link-student .text-content-name:hover {
     cursor: pointer;
     color: var(--terciary-color);
+}
+.text-content-name {
+    text-align: start;
+    width: 250px;
+}
+.text-content-email {
+    text-align: center;
+    width: 300px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.text-content-nife {
+    text-align: start;
+    width: 150px;
+}
+.text-content-class {
+    text-align: center;
+    width: 250px;
 }
 
 /* MOBILE */
@@ -256,14 +281,48 @@ span {
         height: 48px;
     }
     .button-edit{
-        width: 36px;
-        height: 26px;
+        width: 30px;
+        height: 18px;
+        font-size: .5rem;
     }
     .button-delete{
-        width: 36px;
-        height: 26px;
+        width: 30px;
+        height: 18px;
+        font-size: .5rem;
     }
     .buttons-container img{
         width: 24px;
+    }
+    .text-content {
+        width: 50px;
+        font-size: .7rem;
+        text-align: start;
+    }
+    .text-title-email {
+        display: none;
+    }
+    .text-content-name {
+        font-size: .8rem;
+        width: 150px;
+    }
+    .text-content-nife {
+        font-size: .8rem;
+        width: 100px;
+        text-align: start;
+    }
+    .text-content-email {
+        display: none;
+    }
+    .text-content-class {
+        font-size: .7rem;
+        width: 50px;
+        text-align: start;
+    }
+    .container-student-link {
+        font-size: .7rem;
+        width: 100px;
+    }
+    .container-student {
+        justify-content: space-between;
     }
 }
