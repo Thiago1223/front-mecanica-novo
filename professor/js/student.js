@@ -1,58 +1,38 @@
 'use strict'
 
-import { preencherDadosAlunos } from "./api.js"
+import { preencherDadosAlunos } from "../../administrador/js/api.js"
 const alunos = await preencherDadosAlunos()
 
 const criarAluno = (aluno) => {
 
-    const table = document.createElement('div')
-    table.classList.add('table-container')
-
-    const listTitle = document.createElement('ul')
-    listTitle.classList.add('list-title')
-
-    const textTitleName = document.createElement('li')
-    textTitleName.classList.add('text-title-name')
-    textTitleName.textContent = "Nome"
-
-    const textTitleEmail = document.createElement('li')
-    textTitleEmail.classList.add('text-title-email')
-    textTitleEmail.textContent = "Email"
-
-    const textTitleDiscipline = document.createElement('li')
-    textTitleDiscipline.classList.add('text-title-discipline')
-    textTitleDiscipline.textContent = "Disciplina"
-
-    const textTitle = document.createElement('li')
-    textTitle.classList.add('text-title')
-    textTitle.textContent = ""
-
-    const textTitleTwo = document.createElement('li')
-    textTitleTwo.classList.add('text-title')
-    textTitleTwo.textContent = ""
-
-    const contentList = document.createElement('ul')
-    contentList.classList.add('list-content')
+    const contentList = document.createElement('li')
+    contentList.classList.add('container-content')
 
     const containerLinkStudent = document.createElement('li')
     containerLinkStudent.classList.add('container-link-student')
 
     const containerLink = document.createElement('div')
-    containerLink.classList.add('container-link')
+    containerLink.classList.add('container-student-link')
 
     const linkRouteStudentName = document.createElement('a')
     linkRouteStudentName.classList.add('link-route-student')
     linkRouteStudentName.setAttribute('href', '/task')
     linkRouteStudentName.textContent = aluno.nome
+    linkRouteStudentName.title = aluno.nome
     linkRouteStudentName.onclick = route
+    linkRouteStudentName.addEventListener('click', () => {
+        localStorage.setItem('nomeAluno', aluno.nome)
+        localStorage.setItem('turmaAluno', 'DS2T')
+    })
 
     const textContentEmail = document.createElement('li')
     textContentEmail.classList.add('text-content-email')
     textContentEmail.textContent = aluno.email
+    textContentEmail.title = aluno.email
 
-    const textContentDiscipline = document.createElement('li')
-    textContentDiscipline.classList.add('text-content-discipline')
-    textContentDiscipline.textContent = aluno.disciplina
+    const textContentClass = document.createElement('li')
+    textContentClass.classList.add('text-content-class')
+    textContentClass.textContent = 'DS2T'
 
     const buttonsList = document.createElement('ul')
     buttonsList.classList.add('list-buttons')
@@ -65,18 +45,16 @@ const criarAluno = (aluno) => {
     buttonDelete.classList.add('button-delete')
     buttonDelete.textContent = 'Deletar'
    
-    table.append(listTitle, contentList)
-    listTitle.append(textTitleName, textTitleEmail, textTitleDiscipline, textTitle, textTitleTwo)
-    contentList.append(containerLinkStudent, textContentEmail, textContentDiscipline, buttonsList)
+    contentList.append(containerLinkStudent, textContentEmail, textContentClass, buttonsList)
     containerLinkStudent.append(containerLink)
     containerLink.append(linkRouteStudentName)
     buttonsList.append(buttonEdit, buttonDelete)
 
-    return table
+    return contentList
 }
 
 export const carregarAluno = () => {
-    const container = document.getElementById('table-container')
+    const container = document.getElementById('list-content')
     const lines = alunos.map(criarAluno)
     container.replaceChildren(...lines)
 }

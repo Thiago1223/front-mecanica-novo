@@ -3,7 +3,8 @@
 import { carregarCardCurso } from "./course.js"
 import { carregarCardTurma } from "./class.js"
 import { carregarCardDisciplina } from "./discipline.js"
-// import { carregarCardTarefa } from "./tasks.js"
+import { carregarAluno } from "./student.js"
+// import { carregarCardTarefa, criarHeaderTarefa } from "./tasks.js"
 
 const routes = {
     '/main' : 'professor/pages/main.html',
@@ -27,16 +28,18 @@ const route = async () => {
 
     document.getElementById('root').innerHTML = html
 
-    if (window.location.pathname == '/course') {
+    if (path == '/course') {
         carregarCardCurso()
     } else if (window.location.pathname == '/class') {
         carregarCardTurma()
     } else if (window.location.pathname == '/discipline') {
         carregarCardDisciplina()
-    } 
-    //else if (window.location.pathname == '/task') {
+    } else if (window.location.pathname == '/student') {
+        carregarAluno()
+    }
+    // } else if (window.location.pathname == '/task') {
     //     carregarCardTarefa()
-    // } 
+    // }
 }
 
 window.route = route
