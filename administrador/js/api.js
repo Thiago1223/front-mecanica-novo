@@ -54,6 +54,41 @@ export const preencherDadosTurmas = async () => {
     return data.turmas
 }
 
+export const criarDadosTurmas = async (turma) => {
+    const url = `http://localhost:8080/v1/mecanica/turmas`
+    const options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(turma)
+    }
+  
+    fetch(url, options)
+}
+
+export const atualizarDadosTurmas = async (turma) => {
+    const url = `http://localhost:8080/v1/mecanica/turma/${turma.id}`
+    const options = {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(turma)
+    }
+  
+    fetch(url, options)
+  
+}
+
+export const deletarDadosTurmas = async (idAluno) => {
+    const url = `http://localhost:8080/v1/mecanica/turma/${idAluno}`
+    const options = {
+      method: 'DELETE'
+    }
+  
+    fetch(url, options)
+}
 // ---------------- DISCIPLINAS --------------------------
 export const preencherDadosDisciplinas = async () => {
     const url = `http://localhost:8080/v1/mecanica/materias`

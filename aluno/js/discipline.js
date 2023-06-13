@@ -17,28 +17,15 @@ const criarCardDisciplina = (disciplina) => {
 
     const bottomContainer = document.createElement('div')
     bottomContainer.classList.add('bottom-container')
-
-    const buttonEdit = document.createElement('a')
-    buttonEdit.classList.add('button-edit')
-
-    const imgEdit = document.createElement('img')
-    imgEdit.src = '../../img/button_edit.png'
-    imgEdit.classList.add('img-edit')
-
-    const buttonDelete = document.createElement('div')
-    buttonDelete.classList.add('button-delete')
-
-    const imgDelete = document.createElement('img')
-    imgDelete.classList.add('img-delete')
-    imgDelete.src = '../../img/button_delete.png'
    
+    const disciplineName = document.createElement('p')
+    disciplineName.classList.add('discipline-name')
+    disciplineName.textContent = disciplina.nome
+
     card.append(topContainer, bottomContainer)
-    bottomContainer.append(buttonEdit, buttonDelete)
-    buttonEdit.appendChild(imgEdit)
-    buttonDelete.appendChild(imgDelete)
-
+    bottomContainer.append(disciplineName)
+    
     return card
-
 }
 
 export const carregarCardDisciplina = () => {

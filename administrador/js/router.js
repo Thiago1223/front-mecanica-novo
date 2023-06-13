@@ -1,7 +1,7 @@
 'use strict'
 
 import { carregarCardCurso, insertCardCurso, updateCardCurso, deleteCardCurso } from "./course.js"
-import { carregarCardTurma } from "./class.js"
+import { carregarCardTurma, insertCardTurma, updateCardTurma, deleteCardTurma} from "./class.js"
 import { carregarCardDisciplina } from "./discipline.js"
 import { carregarProfessor } from "./teacher.js"
 import { carregarAluno } from "./student.js"
@@ -37,6 +37,9 @@ const route = async () => {
         deleteCardCurso()
     } else if (window.location.pathname == '/class') {
         carregarCardTurma()
+        insertCardTurma()
+        updateCardTurma()
+        deleteCardTurma()
     } else if (window.location.pathname == '/discipline') {
         carregarCardDisciplina()
     } else if (window.location.pathname == '/teachers') {

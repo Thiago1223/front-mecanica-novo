@@ -18,27 +18,14 @@ const criarCardTurma = (turma) => {
     const bottomContainer = document.createElement('div')
     bottomContainer.classList.add('bottom-container')
 
-    const buttonEdit = document.createElement('a')
-    buttonEdit.classList.add('button-edit')
-
-    const imgEdit = document.createElement('img')
-    imgEdit.classList.add('img-edit')
-    imgEdit.src = '../../img/button_edit.png'
-
-    const buttonDelete = document.createElement('div')
-    buttonDelete.classList.add('button-delete')
-
-    const imgDelete = document.createElement('img')
-    imgDelete.classList.add('img-delete')
-    imgDelete.src = '../../img/button_delete.png'
+    const className = document.createElement('p')
+    className.classList.add('class-name')
+    className.textContent = turma.nome
    
     card.append(topContainer, bottomContainer)
-    bottomContainer.append(buttonEdit, buttonDelete)
-    buttonEdit.appendChild(imgEdit)
-    buttonDelete.appendChild(imgDelete)
+    bottomContainer.append(className)
 
     return card
-
 }
 
 export const carregarCardTurma = () => {
