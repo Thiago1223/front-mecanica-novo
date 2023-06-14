@@ -1,6 +1,6 @@
 'use strict'
 
-import { preencherDadosAlunos } from "../../administrador/js/api.js"
+import { preencherDadosAlunos } from "./api.js"
 const alunos = await preencherDadosAlunos()
 
 const criarAluno = (aluno) => {
@@ -16,10 +16,9 @@ const criarAluno = (aluno) => {
 
     const linkRouteStudentName = document.createElement('a')
     linkRouteStudentName.classList.add('link-route-student')
-    linkRouteStudentName.setAttribute('href', '/task')
+    linkRouteStudentName.setAttribute('href', '../pages/tasks.html')
     linkRouteStudentName.textContent = aluno.nome
     linkRouteStudentName.title = aluno.nome
-    linkRouteStudentName.onclick = route
     linkRouteStudentName.addEventListener('click', () => {
         localStorage.setItem('nomeAluno', aluno.nome)
         localStorage.setItem('turmaAluno', 'DS2T')
@@ -34,6 +33,10 @@ const criarAluno = (aluno) => {
     textContentClass.classList.add('text-content-class')
     textContentClass.textContent = 'DS2T'
 
+    const textContentDiscipline = document.createElement('li')
+    textContentDiscipline.classList.add('text-content')
+    textContentDiscipline.textContent = 'DS2T'
+
     const buttonsList = document.createElement('ul')
     buttonsList.classList.add('list-buttons')
 
@@ -41,7 +44,7 @@ const criarAluno = (aluno) => {
     buttonEdit.classList.add('button-edit')
     buttonEdit.textContent = 'Editar'
 
-    const buttonDelete = document.createElement('li')
+    const buttonDelete = document.createElement('a')
     buttonDelete.classList.add('button-delete')
     buttonDelete.textContent = 'Deletar'
    
@@ -53,8 +56,10 @@ const criarAluno = (aluno) => {
     return contentList
 }
 
-export const carregarAluno = () => {
+const carregarAluno = () => {
     const container = document.getElementById('list-content')
     const lines = alunos.map(criarAluno)
     container.replaceChildren(...lines)
 }
+
+carregarAluno()

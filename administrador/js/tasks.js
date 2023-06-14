@@ -5,7 +5,7 @@ const tarefas = await preencherDadosTarefas()
 const nameStudent = localStorage.getItem('nomeAluno')
 const classStudent = localStorage.getItem('turmaAluno')
 
-export const criarHeaderTarefa = () => {
+const criarHeaderTarefa = () => {
 
     const containerTasks = document.createElement('div')
     containerTasks.classList.add('container_tasks')
@@ -18,9 +18,11 @@ export const criarHeaderTarefa = () => {
 
     const numberTasks = document.createElement('span')
     numberTasks.classList.add('number_tasks')
+    numberTasks.textContent = '3'
 
     const textTasks = document.createElement('p')
     textTasks.classList.add('text_tasks')
+    textTasks.textContent = 'Tarefas'
 
     const studentClass = document.createElement('p')
     studentClass.classList.add('student_class')
@@ -38,16 +40,19 @@ const criarCardTarefa = (tarefa) => {
     const card = document.createElement('a')
     card.classList.add('button')
     card.textContent = tarefa.nome
+    card.href = '../pages/results_tasks.html'
 
-    var container = document.getElementById('container_tasks')
-    container.replaceChildren(criarHeaderTarefa())
+    // var container = document.getElementById('container_tasks')
+    // container.replaceChildren(criarHeaderTarefa())
 
     return card
 
 }
 
-export const carregarCardTarefa = () => {
+const carregarCardTarefa = () => {
     const container = document.getElementById('button-container')
     const cards = tarefas.map(criarCardTarefa)
     container.replaceChildren(...cards)
 }
+
+carregarCardTarefa()

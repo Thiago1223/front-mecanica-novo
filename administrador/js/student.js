@@ -16,17 +16,16 @@ const criarAluno = (aluno) => {
 
     const linkRouteStudentName = document.createElement('a')
     linkRouteStudentName.classList.add('link-route-student')
-    linkRouteStudentName.setAttribute('href', '/task')
+    linkRouteStudentName.setAttribute('href', '../pages/tasks.html')
     linkRouteStudentName.textContent = aluno.nome
     linkRouteStudentName.title = aluno.nome
-    linkRouteStudentName.onclick = route
     linkRouteStudentName.addEventListener('click', () => {
         localStorage.setItem('nomeAluno', aluno.nome)
         localStorage.setItem('turmaAluno', 'DS2T')
     })
 
     const textContentEmail = document.createElement('li')
-    textContentEmail.classList.add('text-content')
+    textContentEmail.classList.add('text-content-email')
     textContentEmail.textContent = aluno.email
     textContentEmail.title = aluno.email
 
@@ -45,7 +44,7 @@ const criarAluno = (aluno) => {
     buttonEdit.classList.add('button-edit')
     buttonEdit.textContent = 'Editar'
 
-    const buttonDelete = document.createElement('li')
+    const buttonDelete = document.createElement('a')
     buttonDelete.classList.add('button-delete')
     buttonDelete.textContent = 'Deletar'
    
@@ -57,8 +56,10 @@ const criarAluno = (aluno) => {
     return contentList
 }
 
-export const carregarAluno = () => {
+const carregarAluno = () => {
     const container = document.getElementById('list-content')
     const lines = alunos.map(criarAluno)
     container.replaceChildren(...lines)
 }
+
+carregarAluno()

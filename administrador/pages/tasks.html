@@ -1,37 +1,81 @@
-<link rel="stylesheet" href="../../css/reset.css">
-<link rel="stylesheet" href="../../css/tasks.css">
-<script src="../js/router.js" defer type="module"></script>
-
-<div class="container">
-    <div class="main-container">
-        <div class="header-container">
-            <div class="title-container">
-                <img src="../img/hashtag.png" alt="Icone de Hashtag">
-                <p>Tarefas</p>
-            </div>
-            <div class="buttons-container">
-                <div class="button-add">
-                    <img src="../../img/button_add.png" alt="Botão para adicionar curso">
-                </div>
-                <div class="button-edit">
-                    <img src="../../img/button_edit.png" alt="Botão para editar curso">
-                </div>
-                <div class="button-delete">
-                    <img src="../../img/button_delete.png" alt="Botão para deletar curso">
-                </div>
-            </div>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@500;700;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4f821b9693.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/tasks.css">
+    <script src="../js/tasks.js" defer type="module"></script>
+    <title>Tarefas</title>
+</head>
+<body>
+    <header>
+        <h1 class="text-senai">SENAI</h1>
+        <div class="profile-container">
+            <p class="text-user">Administrador</p>
+            <i class="fa-solid fa-circle-user"></i>
         </div>
-        <div class="line"></div>
-        <div class="container_tasks" id="container_tasks">
-            <!-- <p class="student_name">Thiago Freitas</p>
-            <div class="tasks_number">
-                <span class="number_tasks">3</span>
-                <p class="text_tasks">Tarefas</p>
+    </header>
+    <div class="left-container">
+        <nav class="nav-container">
+            <ul class="list-container">
+                <li>
+                    <div class="container-link">
+                        <a href="./home.html" class="link-route" title="Página inicial"></a>
+                        <img src="../../img/home_icon.png" alt="Icone para retornar a página principal">
+                    </div>
+                </li>
+                <li>
+                    <div class="container-link">
+                        <a href="./teachers.html" class="link-route" title="Professores"></a>
+                        <img src="../../img/teacher_icon.png" alt="Icone para ir á página do professor">
+                    </div>
+                </li>
+                <li>
+                    <div class="container-link">
+                        <a href="./course.html" class="link-route" title="Cursos"></a>
+                        <img src="../../img/courses_icon.png" alt="Icone para ir á página do professor">
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div class="container">
+            <div class="main-container">
+                <div class="header-container">
+                    <div class="title-container">
+                        <img src="../../img/hashtag.png" alt="Icone de Hashtag">
+                        <p>Tarefas</p>
+                    </div>
+                    <div class="buttons-container">
+                        <div class="button-add">
+                            <img src="../../img/button_add.png" alt="Botão para adicionar curso">
+                        </div>
+                        <div class="button-edit">
+                            <img src="../../img/button_edit.png" alt="Botão para editar curso">
+                        </div>
+                        <div class="button-delete">
+                            <img src="../../img/button_delete.png" alt="Botão para deletar curso">
+                        </div>
+                    </div>
+                </div>
+                <div class="line"></div>
+                <div class="container_tasks" id="container_tasks">
+                    <!-- <p class="student_name">Thiago Freitas</p>
+                    <div class="tasks_number">
+                        <span class="number_tasks">3</span>
+                        <p class="text_tasks">Tarefas</p>
+                    </div>
+                    <p class="student_class">DS2T</p>
+                </div> -->
+                <div class="button-container" id="button-container">
+                    <!-- <a href="/results" onclick="route()" class="button">Tarefa 1</a> -->
+                </div>
             </div>
-            <p class="student_class">DS2T</p>
-        </div> -->
-        <div class="button-container" id="button-container">
-            <!-- <a href="/results" onclick="route()" class="button">Tarefa 1</a> -->
         </div>
     </div>
-</div>
+</body>
+</html>

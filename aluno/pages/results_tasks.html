@@ -1,51 +1,93 @@
-<link rel="stylesheet" href="../../css/reset.css">
-<link rel="stylesheet" href="../../css/table.css">
-<script src="../js/router.js" defer type="module"></script>
-
-<div class="container">
-    <div class="main-container">
-        <div class="header-container">
-            <div class="title-container">
-                <img src="../img/hashtag.png" alt="Icone de Hashtag">
-                <p>Luva</p>
-            </div>
-            <div class="buttons-container">
-                <div class="button-add">
-                    <img src="../../img/button_add.png" alt="Botão para adicionar curso">
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@500;700;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4f821b9693.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/table.css">
+    <title>Tarefa</title>
+</head>
+<body>
+    <header>
+        <h1 class="text-senai">SENAI</h1>
+        <div class="profile-container">
+            <p class="text-user">Aluno</p>
+            <i class="fa-solid fa-circle-user"></i>
+        </div>
+    </header>
+    <div class="left-container">
+        <nav class="nav-container">
+            <ul class="list-container">
+                <li>
+                    <div class="container-link">
+                        <a href="./home.html" class="link-route" title="Página inicial"></a>
+                        <img src="../../img/home_icon.png" alt="Icone para retornar a página principal">
+                    </div>
+                </li>
+                <li>
+                    <div class="container-link">
+                        <a href="./discipline.html" class="link-route" title="Disciplina"></a>
+                        <img src="../../img/icon_tasks.png" alt="Icone para ir á página da disciplina">
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div class="container">
+            <div class="main-container">
+                <div class="header-container">
+                    <div class="title-container">
+                        <img src="../../img/hashtag.png" alt="Icone de Hashtag">
+                        <p class="name-task">Luva</p>
+                    </div>
+                    <div class="buttons-container">
+                        <div class="button-add">
+                            <img src="../../img/button_add.png" alt="Botão para adicionar curso">
+                        </div>
+                    </div>
+                </div>
+                <div class="line"></div>
+                <div class="subtitle_container">
+                    <div class="container_subtitle">
+                        <p class="evaluation_text">Avaliação</p>
+                        <div class="subtitle_content">
+                            <p><span>A</span> - Aluno</p>
+                            <p><span>P</span> - Professor</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-container">
+                    <ul class="list-title">
+                        <li class="text-title-criterio">Critério</li>
+                        <li class="text-title-resultado-desejado">Resultado Desejado</li>
+                        <li class="text-title-resultado-obtido">Resultado Obtido</li>
+                        <li class="text-title-margem-de-erro">Margem de Erro</li>
+                        <li class="text-title-avaliacao-aluno">A</li>
+                        <li class="text-title-avaliacao-professor">P</li>
+                        <li class="text-title-acao">Ação</li>
+                    </ul>
+                    <ul class="list-content" id="list-content-tasks">
+                        <!-- <li class="text-content-criterio">Medir a peça e...</li>
+                        <li class="text-content-resultado-desejado">140</li>
+                        <li class="text-content-resultado-obtido">100</li>
+                        <li class="text-content-margem-de-erro">0.7</li>
+                        <li class="text-content-avaliacao-aluno">S</li>
+                        <li class="text-content-avaliacao-professor">S</li>
+                        <ul class="list-buttons">
+                            <li class="button-edit">Editar</li>
+                            <li class="button-delete">Deletar</li>
+                        </ul> -->
+                    </ul>
+                </div>
+                <div class="container-buttons">
+                    <a href="./time_record.html" onclick="route()" class="button-time-record">REGISTRO DE TEMPO</a>
+                    <a href="#" class="button-save">SALVAR</a>
                 </div>
             </div>
-        </div>
-        <div class="line"></div>
-        <div class="subtitle_container">
-            <div class="container_subtitle">
-                <p class="evaluation_text">Avaliação</p>
-                <div class="subtitle_content">
-                    <p><span>A</span> - Aluno</p>
-                    <p><span>P</span> - Professor</p>
-                </div>
-            </div>
-        </div>
-        <div class="table-container">
-            <ul class="list-title">
-                <li class="text-title">Critério</li>
-                <li class="text-title">Resultado Desejado</li>
-                <li class="text-title">Resultado Obtido</li>
-                <li class="text-title">Margem de Erro</li>
-                <li class="text-title">A</li>
-                <li class="text-title">P</li>
-            </ul>
-            <ul class="list-content">
-                <li class="text-content">Medir a peça e...</li>
-                <li class="text-content">140</li>
-                <li class="text-content">100</li>
-                <li class="text-content">0.7</li>
-                <li class="text-content">S</li>
-                <li class="text-content">S</li>
-            </ul>
-        </div>
-        <div class="container-buttons">
-            <a href="/time" onclick="route()" class="button-time-record">REGISTRO DE TEMPO</a>
-            <a href="#" class="button-save">SALVAR</a>
         </div>
     </div>
-</div>
+</body>
+</html>
