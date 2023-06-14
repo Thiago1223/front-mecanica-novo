@@ -27,7 +27,7 @@ const criarCardTurma = (turma) => {
     return card
 }
 
-export const carregarCardTurma = () => {
+const carregarCardTurma = () => {
     const container = document.getElementById('cards-container-class')
     const cards = turmas.map(criarCardTurma)
     container.replaceChildren(...cards)

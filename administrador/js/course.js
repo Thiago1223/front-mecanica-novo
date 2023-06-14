@@ -12,7 +12,7 @@ const criarCardCurso = (curso) => {
 
     const topContainer = document.createElement('a')
     topContainer.classList.add('top-container')
-    topContainer.setAttribute('href', '/class')
+    topContainer.setAttribute('href', '../pages/class.html')
     topContainer.textContent = curso.nome
 
     const bottomContainer = document.createElement('div')
@@ -55,7 +55,7 @@ const criarCardCurso = (curso) => {
 
 }
 
-export const insertCardCurso = () => {
+const insertCardCurso = () => {
 
     const buttonSalvar = document.getElementById('save-modal')
 
@@ -84,7 +84,7 @@ export const insertCardCurso = () => {
 
 }
 
-export const updateCardCurso = () => {
+const updateCardCurso = () => {
 
     const buttonEditar = document.getElementById('edit-modal')
 
@@ -109,7 +109,7 @@ export const updateCardCurso = () => {
 
 }
 
-export const deleteCardCurso = () => {
+const deleteCardCurso = () => {
 
     const buttonDelete = document.getElementById("delete-modal")
 
@@ -126,3 +126,4 @@ const carregarCardCurso = () => {
 }
 
 carregarCardCurso()
+insertCardCurso()

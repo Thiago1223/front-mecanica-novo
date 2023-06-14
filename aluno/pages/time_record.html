@@ -1,42 +1,85 @@
-<link rel="stylesheet" href="../../css/reset.css">
-<link rel="stylesheet" href="../../css/table.css">
-
-<div class="container">
-    <div class="main-container">
-        <div class="header-container">
-            <div class="title-container">
-                <img src="../../img/hashtag.png" alt="Icone de Hashtag">
-                <p>Luva</p>
-            </div>
-            <div class="buttons-container">
-                <div class="button-add">
-                    <img src="../../img/button_add.png" alt="Botão para adicionar curso">
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@500;700;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4f821b9693.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/table.css">
+    <title>Registro de Tempo</title>
+</head>
+<body>
+    <header>
+        <h1 class="text-senai">SENAI</h1>
+        <div class="profile-container">
+            <p class="text-user">Aluno</p>
+            <i class="fa-solid fa-circle-user"></i>
+        </div>
+    </header>
+    <div class="left-container">
+        <nav class="nav-container">
+            <ul class="list-container">
+                <li>
+                    <div class="container-link">
+                        <a href="./home.html" class="link-route" title="Página inicial"></a>
+                        <img src="../../img/home_icon.png" alt="Icone para retornar a página principal">
+                    </div>
+                </li>
+                <li>
+                    <div class="container-link">
+                        <a href="./discipline.html" class="link-route" title="Disciplina"></a>
+                        <img src="../../img/icon_tasks.png" alt="Icone para ir á página da disciplina">
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div class="container">
+            <div class="main-container">
+                <div class="header-container">
+                    <div class="title-container">
+                        <img src="../../img/hashtag.png" alt="Icone de Hashtag">
+                        <p>Luva</p>
+                    </div>
+                    <div class="buttons-container">
+                        <div class="button-add">
+                            <img src="../../img/button_add.png" alt="Botão para adicionar curso">
+                        </div>
+                    </div>
+                </div>
+                <div class="line"></div>
+                <h1 class="time_record_title">Registro de Tempo</h1>
+                <div class="table-container">
+                    <ul class="list-title">
+                        <li class="text-title-data">Data</li>
+                        <li class="text-title-inicio">Início</li>
+                        <li class="text-title-termino">Término</li>
+                        <li class="text-title-desconto">Desconto</li>
+                        <li class="text-title-liquido">Líquido</li>
+                        <li class="text-title-total-geral">Total Geral</li>
+                        <li class="text-title-acao">Ação</li>
+                    </ul>
+                    <ul class="list-content">
+                        <li class="text-content-data">26/05</li>
+                        <li class="text-content-inicio">13:00</li>
+                        <li class="text-content-termino">15:00</li>
+                        <li class="text-content-desconto">00:15</li>
+                        <li class="text-content-liquido">01:45</li>
+                        <li class="text-content-total-geral">05:45</li>
+                        <ul class="list-buttons-time-record">
+                            <li class="button-edit">Editar</li>
+                            <li class="button-delete">Deletar</li>
+                        </ul>
+                    </ul>
+                </div>
+                <p class="predicted_time_title">Tempo Previsto: <span class="time_predicted"> 5h00</span></p>
+                <div class="container-buttons">
+                    <a href="#" class="button-save">SALVAR</a>
                 </div>
             </div>
         </div>
-        <div class="line"></div>
-        <h1 class="time_record_title">Registro de Tempo</h1>
-        <div class="table-container">
-            <ul class="list-title">
-                <li class="text-title">Data</li>
-                <li class="text-title">Início</li>
-                <li class="text-title">Término</li>
-                <li class="text-title">Desconto</li>
-                <li class="text-title">Líquido</li>
-                <li class="text-title">Total Geral</li>
-            </ul>
-            <ul class="list-content">
-                <li class="text-content">26/05</li>
-                <li class="text-content">13:00</li>
-                <li class="text-content">15:00</li>
-                <li class="text-content">00:15</li>
-                <li class="text-content">01:45</li>
-                <li class="text-content">05:45</li>
-            </ul>
-        </div>
-        <p class="predicted_time_title">Tempo Previsto: <span class="time_predicted"> 5h00</span></p>
-        <div class="container-buttons">
-            <a href="#" class="button-save">SALVAR</a>
-        </div>
     </div>
-</div>
+</body>
+</html>

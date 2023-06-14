@@ -12,10 +12,9 @@ const criarCardTurma = (turma) => {
 
     const topContainer = document.createElement('a')
     topContainer.classList.add('top-container')
-    topContainer.setAttribute('href', '/discipline')
+    topContainer.setAttribute('href', '../pages/discipline.html')
     topContainer.textContent = turma.sigla
     topContainer.title = turma.nome
-    topContainer.onclick = route
 
     const bottomContainer = document.createElement('div')
     bottomContainer.classList.add('bottom-container')
@@ -55,7 +54,7 @@ const criarCardTurma = (turma) => {
 
 }
 
-export const insertCardTurma = () => {
+const insertCardTurma = () => {
 
     const buttonSalvar = document.getElementById('save-modal')
 
@@ -79,7 +78,7 @@ export const insertCardTurma = () => {
     })
 }
 
-export const updateCardTurma = () => {
+const updateCardTurma = () => {
 
     const buttonEditar = document.getElementById('edit-modal')
 
@@ -99,7 +98,7 @@ export const updateCardTurma = () => {
     })
 }
 
-export const deleteCardTurma = () => {
+const deleteCardTurma = () => {
 
     const buttonDelete = document.getElementById("delete-modal")
 
@@ -108,8 +107,10 @@ export const deleteCardTurma = () => {
     })
 }
 
-export const carregarCardTurma = () => {
+const carregarCardTurma = () => {
     const container = document.getElementById('cards-container-class')
     const cards = turmas.map(criarCardTurma)
     container.replaceChildren(...cards)
 }
+
+carregarCardTurma()
