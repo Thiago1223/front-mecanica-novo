@@ -71,7 +71,7 @@ const insertCardTurma = () => {
                 "nome": `${nomeTurma}`,
                 "sigla": `${siglaTurma}`
             }
-
+            
             criarDadosTurmas(turma)
         }
 
@@ -114,3 +114,6 @@ const carregarCardTurma = () => {
 }
 
 carregarCardTurma()
+insertCardTurma()
+updateCardTurma()
+deleteCardTurma()

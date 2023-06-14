@@ -127,3 +127,5 @@ const carregarCardCurso = () => {
 
 carregarCardCurso()
 insertCardCurso()
+updateCardCurso()
+deleteCardCurso()
