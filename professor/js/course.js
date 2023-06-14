@@ -12,9 +12,8 @@ const criarCardCurso = (curso) => {
 
     const topContainer = document.createElement('a')
     topContainer.classList.add('top-container')
-    topContainer.setAttribute('href', '/class')
+    topContainer.setAttribute('href', './class.html')
     topContainer.textContent = curso.nome
-    topContainer.onclick = route
 
     const bottomContainer = document.createElement('div')
     bottomContainer.classList.add('bottom-container')
@@ -29,3 +28,5 @@ export const carregarCardCurso = () => {
     const cards = cursos.map(criarCardCurso)
     container.replaceChildren(...cards)
 }
+
+carregarCardCurso()

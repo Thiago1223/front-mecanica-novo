@@ -10,10 +10,9 @@ const criarCardDisciplina = (disciplina) => {
 
     const topContainer = document.createElement('a')
     topContainer.classList.add('top-container')
-    topContainer.setAttribute('href', '/student')
+    topContainer.setAttribute('href', './student.html')
     topContainer.textContent = disciplina.sigla
     topContainer.title = disciplina.nome
-    topContainer.onclick = route
 
     const bottomContainer = document.createElement('div')
     bottomContainer.classList.add('bottom-container')
@@ -46,3 +45,5 @@ export const carregarCardDisciplina = () => {
     const cards = disciplinas.map(criarCardDisciplina)
     container.replaceChildren(...cards)
 }
+
+carregarCardDisciplina()

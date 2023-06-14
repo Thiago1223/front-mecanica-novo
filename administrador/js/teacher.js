@@ -28,7 +28,7 @@ const criarProfessor = (professor) => {
     buttonEdit.classList.add('button-edit')
     buttonEdit.textContent = 'Editar'
 
-    const buttonDelete = document.createElement('li')
+    const buttonDelete = document.createElement('a')
     buttonDelete.classList.add('button-delete')
     buttonDelete.textContent = 'Deletar'
    
@@ -38,8 +38,10 @@ const criarProfessor = (professor) => {
     return contentList
 }
 
-export const carregarProfessor = () => {
+const carregarProfessor = () => {
     const container = document.getElementById('list-content-teacher')
     const lines = professores.map(criarProfessor)
     container.replaceChildren(...lines)
 }
+
+carregarProfessor()

@@ -10,10 +10,9 @@ const criarCardTurma = (turma) => {
 
     const topContainer = document.createElement('a')
     topContainer.classList.add('top-container')
-    topContainer.setAttribute('href', '/discipline')
+    topContainer.setAttribute('href', './discipline.html')
     topContainer.textContent = turma.sigla
     topContainer.title = turma.nome
-    topContainer.onclick = route
 
     const bottomContainer = document.createElement('div')
     bottomContainer.classList.add('bottom-container')
@@ -33,3 +32,5 @@ export const carregarCardTurma = () => {
     const cards = turmas.map(criarCardTurma)
     container.replaceChildren(...cards)
 }
+
+carregarCardTurma()

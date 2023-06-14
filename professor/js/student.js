@@ -16,10 +16,9 @@ const criarAluno = (aluno) => {
 
     const linkRouteStudentName = document.createElement('a')
     linkRouteStudentName.classList.add('link-route-student')
-    linkRouteStudentName.setAttribute('href', '/task')
+    linkRouteStudentName.setAttribute('href', './result_tasks.html')
     linkRouteStudentName.textContent = aluno.nome
     linkRouteStudentName.title = aluno.nome
-    linkRouteStudentName.onclick = route
     linkRouteStudentName.addEventListener('click', () => {
         localStorage.setItem('nomeAluno', aluno.nome)
         localStorage.setItem('turmaAluno', 'DS2T')
@@ -58,3 +57,5 @@ export const carregarAluno = () => {
     const lines = alunos.map(criarAluno)
     container.replaceChildren(...lines)
 }
+
+carregarAluno()

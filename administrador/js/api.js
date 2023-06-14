@@ -20,6 +20,17 @@ export const criarDadosCursos = async (curso) => {
     }
   
     fetch(url, options)
+    .then(response => {
+        if (response.ok) {
+          location.reload()
+        } else {
+          console.log('Erro ao criar o curso.')
+        }
+      })
+      .catch(error => {
+        console.log('Ocorreu um erro na requisição:', error)
+      })
+    
 }
 
 export const atualizarDadosCursos = async (curso) => {
@@ -89,6 +100,7 @@ export const deletarDadosTurmas = async (idAluno) => {
   
     fetch(url, options)
 }
+
 // ---------------- DISCIPLINAS --------------------------
 export const preencherDadosDisciplinas = async () => {
     const url = `http://localhost:8080/v1/mecanica/materias`
