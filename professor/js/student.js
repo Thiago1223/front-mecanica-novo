@@ -25,7 +25,7 @@ const criarAluno = (aluno) => {
     })
 
     const textContentEmail = document.createElement('li')
-    textContentEmail.classList.add('text-content-email')
+    textContentEmail.classList.add('text-content')
     textContentEmail.textContent = aluno.email
     textContentEmail.title = aluno.email
 
