@@ -14,6 +14,9 @@ const criarCardCurso = (curso) => {
     topContainer.classList.add('top-container')
     topContainer.setAttribute('href', '../pages/class.html')
     topContainer.textContent = curso.nome
+    topContainer.addEventListener('click', () => {
+        localStorage.setItem('idDoCurso', curso.id)
+    })
 
     const bottomContainer = document.createElement('div')
     bottomContainer.classList.add('bottom-container')

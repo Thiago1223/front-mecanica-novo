@@ -209,7 +209,6 @@ span {
     width: 250px;
 }
 .text-content-email {
-    text-align: center;
     width: 300px;
     text-overflow: ellipsis;
     white-space: nowrap;

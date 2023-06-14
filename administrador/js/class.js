@@ -1,9 +1,10 @@
 'use strict'
 
-import { preencherDadosTurmas, criarDadosTurmas, atualizarDadosTurmas, deletarDadosTurmas } from "./api.js"
+import { preencherDadosTurmasPeloIdCurso, criarDadosTurmas, atualizarDadosTurmas, deletarDadosTurmas } from "./api.js"
 
 const idTurma = localStorage.getItem('idDaTurma')
-const turmas = await preencherDadosTurmas()
+const idCurso = localStorage.getItem('idDoCurso')
+const turmas = await preencherDadosTurmasPeloIdCurso(idCurso)
 
 const criarCardTurma = (turma) => {
 
@@ -14,7 +15,10 @@ const criarCardTurma = (turma) => {
     topContainer.classList.add('top-container')
     topContainer.setAttribute('href', '../pages/discipline.html')
     topContainer.textContent = turma.sigla
-    topContainer.title = turma.nome
+    topContainer.title = turma.nome_turma
+    topContainer.addEventListener('click', () => {
+        localStorage.setItem('idDaTurma', turma.id)
+    })
 
     const bottomContainer = document.createElement('div')
     bottomContainer.classList.add('bottom-container')
@@ -25,7 +29,7 @@ const criarCardTurma = (turma) => {
     buttonEdit.addEventListener('click', () => {
         localStorage.setItem('idDaTurma', turma.id)
 
-        document.getElementById('name-turma-edit').value = turma.nome
+        document.getElementById('name-turma-edit').value = turma.nome_turma
         document.getElementById('sigla-turma-edit').value = turma.sigla
 
     })
@@ -34,7 +38,7 @@ const criarCardTurma = (turma) => {
     imgEdit.classList.add('img-edit')
     imgEdit.src = '../../img/button_edit.png'
 
-    const buttonDelete = document.createElement('div')
+    const buttonDelete = document.createElement('a')
     buttonDelete.classList.add('button-delete')
     buttonDelete.href = '#modal-container-delete'
     buttonDelete.addEventListener('click', () => {
@@ -60,8 +64,8 @@ const insertCardTurma = () => {
 
     buttonSalvar.addEventListener('click', () => {
 
-        const nomeTurma = document.getElementById('name-curso').value
-        const siglaTurma = document.getElementById('sigla-curso').value
+        const nomeTurma = document.getElementById('name-turma').value
+        const siglaTurma = document.getElementById('sigla-turma').value
     
         if (nomeTurma == '' || siglaTurma == '') {
             alert('Todos os campos devem ser preenchidos!')
