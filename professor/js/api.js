@@ -47,8 +47,8 @@ export const atualizarDadosCursos = async (curso) => {
   
 }
 
-export const deletarDadosCursos = async (idAluno) => {
-    const url = `http://localhost:8080/v1/mecanica/curso/${idAluno}`
+export const deletarDadosCursos = async (idCurso) => {
+    const url = `http://localhost:8080/v1/mecanica/curso/${idCurso}`
     const options = {
       method: 'DELETE'
     }
@@ -92,8 +92,8 @@ export const atualizarDadosTurmas = async (turma) => {
   
 }
 
-export const deletarDadosTurmas = async (idAluno) => {
-    const url = `http://localhost:8080/v1/mecanica/turma/${idAluno}`
+export const deletarDadosTurmas = async (idTurma) => {
+    const url = `http://localhost:8080/v1/mecanica/turma/${idTurma}`
     const options = {
       method: 'DELETE'
     }
@@ -103,11 +103,47 @@ export const deletarDadosTurmas = async (idAluno) => {
 
 // ---------------- DISCIPLINAS --------------------------
 export const preencherDadosDisciplinas = async () => {
-    const url = `http://localhost:8080/v1/mecanica/materias`
-    const response = await fetch(url)
-    const data = await response.json()
+  const url = `http://localhost:8080/v1/mecanica/materias`
+  const response = await fetch(url)
+  const data = await response.json()
 
-    return data.materia
+  return data.materia
+}
+
+export const criarDadosDisciplinas = async (materia) => {
+  const url = `http://localhost:8080/v1/mecanica/materia`
+  const options = {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(materia)
+  }
+
+  fetch(url, options)
+}
+
+export const atualizarDadosDisciplinas = async (materia) => {
+  const url = `http://localhost:8080/v1/mecanica/materia/${materia.id}`
+  const options = {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(materia)
+  }
+
+  fetch(url, options)
+
+}
+
+export const deletarDadosDisciplinas = async (idMateria) => {
+  const url = `http://localhost:8080/v1/mecanica/turma/${idMateria}`
+  const options = {
+    method: 'DELETE'
+  }
+
+  fetch(url, options)
 }
 
 // ---------------- TAREFAS ------------------------------

@@ -282,6 +282,121 @@ header{
 .list-container img:hover{
     transform: scale(1.1);
 }
+.modal-container{
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(77, 77, 77, .7);
+    transition: all .4s;
+}
+.modal-container:target {
+    visibility: visible;
+    opacity: 1;
+}
+.modal-content{
+    width: 1600px;
+    height: 860px;
+    background-color: rgba(217, 217, 217, 0.9);
+    font-family: var(--primary-font);
+}
+.modal-content-delete{
+    width: 640px;
+    height: 460px;
+    background-color: rgba(217, 217, 217, 0.9);
+    font-family: var(--primary-font);
+    text-align: center;
+}
+.header-modal{
+    display: flex;
+    width: 100%;
+    height: 128px;
+    background-color: var(--terciary-color);
+    color: #FFFFFF;
+    align-items: center;
+}
+.text-senai-modal{
+    font-style: italic;
+    font-weight: 800;
+    font-size: 4rem;
+    padding-left: 32px;
+}
+.main-modal{
+    height: calc(100% - 128px);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.title-modal{
+    font-size: 4rem;
+    font-weight: 700;
+}
+.input-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+}
+.textfield-container{
+    display: flex;
+    flex-direction: column;
+}
+.textfield-container p{
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+.textfield-login{
+    background-color: var(--secondary-color);
+    border: none;
+    width: 600px;
+    height: 60px;
+    border-radius: 8px;
+    outline: none;
+    font-family: var(--primary-font);
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 0 32px;
+}
+.buttons-modal{
+    display: flex;
+    gap: 82px;
+}
+.save-modal{
+    display: flex;
+    width: 240px;
+    height: 64px;
+    background-color: #20B842;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 800;
+    font-style: italic;
+    font-family: var(--primary-font);
+    cursor: pointer;
+    color: #FFFFFF;
+}
+.close-modal{
+    display: flex;
+    width: 240px;
+    height: 64px;
+    background-color: #D90505;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 800;
+    font-style: italic;
+    font-family: var(--primary-font);
+    cursor: pointer;
+    color: #FFFFFF;
+}
 
 
 /* MOBILE */

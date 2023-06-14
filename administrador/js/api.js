@@ -94,7 +94,7 @@ export const preencherDadosTurmasPeloIdCurso = async (idCurso) => {
 }
 
 export const criarDadosTurmas = async (turma) => {
-  const url = `http://localhost:8080/v1/mecanica/turmas`
+  const url = `http://localhost:8080/v1/mecanica/turma`
   const options = {
     method: 'POST',
     headers: {
@@ -191,7 +191,7 @@ export const criarDadosDisciplinas = async (materia) => {
       if (response.ok) {
         location.reload()
       } else {
-        console.log('Erro ao criar a matéria.')
+        console.log('Erro ao criar a disciplina.')
       }
     })
     .catch(error => {
@@ -276,11 +276,68 @@ export const preencherDadosTarefasPeloIdDisciplina = async (idDisciplina) => {
   return data.tarefas_da_materia
 }
 
-// ----------------- PROFESSORES ------------------------------
-export const preencherDadosProfessores = async () => {
+// ---------------- PROFESSORES ------------------------------
+export const criarDadosProfessores = async (professor) => {
   const url = `http://localhost:8080/v1/mecanica/professor`
-  const response = await fetch(url)
-  const data = await response.json()
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(professor)
+  }
 
-  return data.professor
+  fetch(url, options)
+    .then(response => {
+      if (response.ok) {
+        location.reload()
+      } else {
+        console.log('Erro ao criar o professor.')
+      }
+    })
+    .catch(error => {
+      console.log('Ocorreu um erro na requisição:', error)
+    })
+}
+
+export const atualizarDadosProfessores = async (professor) => {
+  const url = `http://localhost:8080/v1/mecanica/professor/${professor.id}`
+  const options = {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(professor)
+  }
+
+  fetch(url, options)
+    .then(response => {
+      if (response.ok) {
+        location.reload()
+      } else {
+        console.log('Erro ao atualizar o professor.')
+      }
+    })
+    .catch(error => {
+      console.log('Ocorreu um erro na requisição:', error)
+    })
+}
+
+export const deletarDadosProfessores = async (idProfessor) => {
+  const url = `http://localhost:8080/v1/mecanica/professor/${idProfessor}`
+  const options = {
+    method: 'DELETE'
+  }
+
+  fetch(url, options)
+    .then(response => {
+      if (response.ok) {
+        location.reload()
+      } else {
+        console.log('Erro ao deletar o professor.')
+      }
+    })
+    .catch(error => {
+      console.log('Ocorreu um erro na requisição:', error)
+    })
 }

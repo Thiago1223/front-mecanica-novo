@@ -31,6 +31,7 @@ const criarCardTurma = (turma) => {
 
         document.getElementById('name-turma-edit').value = turma.nome_turma
         document.getElementById('sigla-turma-edit').value = turma.sigla
+        document.getElementById('nome_curso-turma-edit').value = turma.id_curso
 
     })
 
@@ -66,14 +67,16 @@ const insertCardTurma = () => {
 
         const nomeTurma = document.getElementById('name-turma').value
         const siglaTurma = document.getElementById('sigla-turma').value
+        const nomeCursoTurma = document.getElementById('nome_curso-turma').value
     
-        if (nomeTurma == '' || siglaTurma == '') {
+        if (nomeTurma == '' || siglaTurma == '' || nomeCursoTurma == '') {
             alert('Todos os campos devem ser preenchidos!')
         } else {
 
             const turma = {
                 "nome": `${nomeTurma}`,
-                "sigla": `${siglaTurma}`
+                "sigla": `${siglaTurma}`,
+                "id_curso": `${nomeCursoTurma}`
             }
             
             criarDadosTurmas(turma)
@@ -90,11 +93,13 @@ const updateCardTurma = () => {
 
         const nomeTurma = document.getElementById('name-turma-edit').value
         const siglaTurma = document.getElementById('sigla-turma-edit').value
+        const nomeCursoTurma = document.getElementById('nome_curso-turma-edit').value
 
         const dadosAtualizado = {
-            "id": idCurso,
+            "id": idTurma,
             "nome": `${nomeTurma}`,
-            "sigla": `${siglaTurma}`
+            "sigla": `${siglaTurma}`,
+            "id_curso": `${nomeCursoTurma}`
         }
 
         atualizarDadosTurmas(dadosAtualizado)
