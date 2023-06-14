@@ -1,8 +1,10 @@
 'use strict'
 
-import { preencherDadosDisciplinas } from "./api.js"
+import { criarDadosDisciplinas, preencherDadosDisciplinas, atualizarDadosDisciplinas, deletarDadosDisciplinas } from "./api.js"
+
 const disciplinas = await preencherDadosDisciplinas()
 
+const idDisciplina = localStorage.getItem('idDaDisciplina')
 const criarCardDisciplina = (disciplina) => {
 
     const card = document.createElement('div')
@@ -19,13 +21,24 @@ const criarCardDisciplina = (disciplina) => {
 
     const buttonEdit = document.createElement('a')
     buttonEdit.classList.add('button-edit')
+    buttonEdit.href = '#modal-container-edit'
+    buttonEdit.addEventListener('click', () => {
+        localStorage.setItem('idDaDisciplina', disciplina.id)
+
+        document.getElementById('name-disciplina-edit').value = disciplina.nome
+        document.getElementById('sigla-disciplina-edit').value = disciplina.sigla
+    })
 
     const imgEdit = document.createElement('img')
     imgEdit.src = '../../img/button_edit.png'
     imgEdit.classList.add('img-edit')
 
-    const buttonDelete = document.createElement('div')
+    const buttonDelete = document.createElement('a')
     buttonDelete.classList.add('button-delete')
+    buttonDelete.href = '#modal-container-delete'
+    buttonDelete.addEventListener('click', () => {
+        localStorage.setItem('idDaDisciplina', disciplina.id)
+    })
 
     const imgDelete = document.createElement('img')
     imgDelete.classList.add('img-delete')
@@ -46,23 +59,19 @@ const insertCardDisciplina = () => {
 
     buttonSalvar.addEventListener('click', () => {
 
-        const nomeCurso = document.getElementById('name-curso').value
-        const siglaCurso = document.getElementById('sigla-curso').value
-        const horaCurso = document.getElementById('hora-curso').value
-        const descricaoCurso = document.getElementById('descricao-curso').value
+        const nomeDisciplina = document.getElementById('name-disciplina').value
+        const siglaDisciplina = document.getElementById('sigla-disciplina').value
     
-        if (nomeCurso == '' || siglaCurso == '' || horaCurso == '' || isNaN(horaCurso) || descricaoCurso == '') {
+        if (nomeDisciplina == '' || siglaDisciplina == '') {
             alert('Todos os campos devem ser preenchidos!')
         } else {
 
-            const curso = {
-                "nome": `${nomeCurso}`,
-                "sigla": `${siglaCurso}`,
-                "descricao": `${descricaoCurso}`,
-                "carga_horaria": parseInt(horaCurso)
+            const disciplina = {
+                "nome": `${nomeDisciplina}`,
+                "sigla": `${siglaDisciplina}`,
             }
 
-            criarDadosCursos(curso)
+            criarDadosDisciplinas(disciplina)
         }
 
     })
@@ -75,23 +84,18 @@ const updateCardDisciplina = () => {
 
     buttonEditar.addEventListener("click", () => {
 
-        const nomeCurso = document.getElementById('name-curso-edit').value
-        const siglaCurso = document.getElementById('sigla-curso-edit').value
-        const horaCurso = document.getElementById('hora-curso-edit').value
-        const descricaoCurso = document.getElementById('descricao-curso-edit').value
+        const nomeDisciplina = document.getElementById('name-disciplina-edit').value
+        const siglaDisciplina = document.getElementById('sigla-disciplina-edit').value
 
         const dadosAtualizado = {
-            "id": idCurso,
-            "nome": `${nomeCurso}`,
-            "sigla": `${siglaCurso}`,
-            "descricao": `${descricaoCurso}`,
-            "carga_horaria": parseInt(horaCurso)
+            "id": idDisciplina,
+            "nome": `${nomeDisciplina}`,
+            "sigla": `${siglaDisciplina}`
         }
 
-        atualizarDadosCursos(dadosAtualizado)
+        atualizarDadosDisciplinas(dadosAtualizado)
 
     })
-
 }
 
 const deleteCardDisciplina = () => {
@@ -99,7 +103,7 @@ const deleteCardDisciplina = () => {
     const buttonDelete = document.getElementById("delete-modal")
 
     buttonDelete.addEventListener('click', () => {
-        deletarDadosCursos(idCurso)
+        deletarDadosDisciplinas(idDisciplina)
     })
 
 }
@@ -111,3 +115,6 @@ const carregarCardDisciplina = () => {
 }
 
 carregarCardDisciplina()
+insertCardDisciplina()
+updateCardDisciplina()
+deleteCardDisciplina()

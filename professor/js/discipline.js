@@ -1,8 +1,10 @@
 'use strict'
 
-import { preencherDadosDisciplinas } from "./api.js"
+import { criarDadosDisciplinas, preencherDadosDisciplinas, atualizarDadosDisciplinas, deletarDadosDisciplinas } from "./api.js"
+
 const disciplinas = await preencherDadosDisciplinas()
 
+const idDisciplina = localStorage.getItem('idDaDisciplina')
 const criarCardDisciplina = (disciplina) => {
 
     const card = document.createElement('div')
@@ -19,13 +21,24 @@ const criarCardDisciplina = (disciplina) => {
 
     const buttonEdit = document.createElement('a')
     buttonEdit.classList.add('button-edit')
+    buttonEdit.href = '#modal-container-edit'
+    buttonEdit.addEventListener('click', () => {
+        localStorage.setItem('idDaDisciplina', disciplina.id)
+
+        document.getElementById('name-disciplina-edit').value = disciplina.nome
+        document.getElementById('sigla-disciplina-edit').value = disciplina.sigla
+    })
 
     const imgEdit = document.createElement('img')
     imgEdit.src = '../../img/button_edit.png'
     imgEdit.classList.add('img-edit')
 
-    const buttonDelete = document.createElement('div')
+    const buttonDelete = document.createElement('a')
     buttonDelete.classList.add('button-delete')
+    buttonDelete.href = '#modal-container-delete'
+    buttonDelete.addEventListener('click', () => {
+        localStorage.setItem('idDaDisciplina', disciplina.id)
+    })
 
     const imgDelete = document.createElement('img')
     imgDelete.classList.add('img-delete')
@@ -40,6 +53,61 @@ const criarCardDisciplina = (disciplina) => {
 
 }
 
+const insertCardDisciplina = () => {
+
+    const buttonSalvar = document.getElementById('save-modal')
+
+    buttonSalvar.addEventListener('click', () => {
+
+        const nomeDisciplina = document.getElementById('name-disciplina').value
+        const siglaDisciplina = document.getElementById('sigla-disciplina').value
+    
+        if (nomeDisciplina == '' || siglaDisciplina == '') {
+            alert('Todos os campos devem ser preenchidos!')
+        } else {
+
+            const disciplina = {
+                "nome": `${nomeDisciplina}`,
+                "sigla": `${siglaDisciplina}`,
+            }
+
+            criarDadosDisciplinas(disciplina)
+        }
+
+    })
+
+}
+
+const updateCardDisciplina = () => {
+
+    const buttonEditar = document.getElementById('edit-modal')
+
+    buttonEditar.addEventListener("click", () => {
+
+        const nomeDisciplina = document.getElementById('name-disciplina-edit').value
+        const siglaDisciplina = document.getElementById('sigla-disciplina-edit').value
+
+        const dadosAtualizado = {
+            "id": idDisciplina,
+            "nome": `${nomeDisciplina}`,
+            "sigla": `${siglaDisciplina}`
+        }
+
+        atualizarDadosDisciplinas(dadosAtualizado)
+
+    })
+}
+
+const deleteCardDisciplina = () => {
+
+    const buttonDelete = document.getElementById("delete-modal")
+
+    buttonDelete.addEventListener('click', () => {
+        deletarDadosDisciplinas(idDisciplina)
+    })
+
+}
+
 const carregarCardDisciplina = () => {
     const container = document.getElementById('cards-container-discipline')
     const cards = disciplinas.map(criarCardDisciplina)
@@ -47,3 +115,6 @@ const carregarCardDisciplina = () => {
 }
 
 carregarCardDisciplina()
+insertCardDisciplina()
+updateCardDisciplina()
+deleteCardDisciplina()
