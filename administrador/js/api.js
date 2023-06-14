@@ -168,6 +168,14 @@ export const preencherDadosDisciplinas = async () => {
   return data.materia
 }
 
+export const preencherDadosDisciplinasPeloIdTurma = async (idTurma) => {
+  const url = `http://localhost:8080/v1/mecanica/materia/idTurma/${idTurma}`
+  const response = await fetch(url)
+  const data = await response.json()
+
+  return data.materiasDaTurma
+}
+
 export const criarDadosDisciplinas = async (materia) => {
   const url = `http://localhost:8080/v1/mecanica/materia`
   const options = {
@@ -234,6 +242,23 @@ export const deletarDadosDisciplinas = async (idDisciplina) => {
     })
 }
 
+// ----------------- ALUNOS ------------------------------
+export const preencherDadosAlunos = async () => {
+  const url = `http://localhost:8080/v1/mecanica/aluno`
+  const response = await fetch(url)
+  const data = await response.json()
+
+  return data.alunos
+}
+
+export const preencherDadosAlunosPeloIdTurma = async (idTurma) => {
+  const url = `http://localhost:8080/v1/mecanica/alunos/turma/idTurma/${idTurma}`
+  const response = await fetch(url)
+  const data = await response.json()
+
+  return data.alunosDaTurma
+}
+
 // ---------------- TAREFAS ------------------------------
 export const preencherDadosTarefas = async () => {
   const url = `http://localhost:8080/v1/mecanica/tarefas`
@@ -243,15 +268,15 @@ export const preencherDadosTarefas = async () => {
   return data.tarefa
 }
 
-// ----------------- PROFESSORES ------------------------------
-export const preencherDadosProfessores = async () => {
-  const url = `http://localhost:8080/v1/mecanica/professor`
+export const preencherDadosTarefasPeloIdDisciplina = async (idDisciplina) => {
+  const url = `http://localhost:8080/v1/mecanica/tarefa/materia/idMateria/${idDisciplina}`
   const response = await fetch(url)
   const data = await response.json()
 
-  return data.professor
+  return data.tarefas_da_materia
 }
 
+// ---------------- PROFESSORES ------------------------------
 export const criarDadosProfessores = async (professor) => {
   const url = `http://localhost:8080/v1/mecanica/professor`
   const options = {
@@ -315,13 +340,4 @@ export const deletarDadosProfessores = async (idProfessor) => {
     .catch(error => {
       console.log('Ocorreu um erro na requisição:', error)
     })
-}
-
-// ----------------- ALUNOS ------------------------------
-export const preencherDadosAlunos = async () => {
-  const url = `http://localhost:8080/v1/mecanica/aluno`
-  const response = await fetch(url)
-  const data = await response.json()
-
-  return data.alunos
 }

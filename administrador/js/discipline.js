@@ -4,6 +4,12 @@ import { criarDadosDisciplinas, preencherDadosDisciplinas, atualizarDadosDiscipl
 
 const disciplinas = await preencherDadosDisciplinas()
 
+import { preencherDadosDisciplinasPeloIdTurma } from "./api.js"
+
+const idTurma = localStorage.getItem('idDaTurma')
+const disciplinas = await preencherDadosDisciplinasPeloIdTurma(idTurma)
+
+
 const idDisciplina = localStorage.getItem('idDaDisciplina')
 const criarCardDisciplina = (disciplina) => {
 
@@ -13,8 +19,11 @@ const criarCardDisciplina = (disciplina) => {
     const topContainer = document.createElement('a')
     topContainer.classList.add('top-container')
     topContainer.setAttribute('href', '../pages/students.html')
-    topContainer.textContent = disciplina.sigla
-    topContainer.title = disciplina.nome
+    topContainer.textContent = disciplina.sigla_materia
+    topContainer.title = disciplina.nome_materia
+    topContainer.addEventListener('click', () => {
+        localStorage.setItem('idDaDisciplina', disciplina.id)
+    })
 
     const bottomContainer = document.createElement('div')
     bottomContainer.classList.add('bottom-container')

@@ -1,7 +1,9 @@
 'use strict'
 
-import { preencherDadosAlunos } from "./api.js"
-const alunos = await preencherDadosAlunos()
+import { preencherDadosAlunosPeloIdTurma } from "./api.js"
+
+const idTurma = localStorage.getItem('idDaTurma')
+const alunos = await preencherDadosAlunosPeloIdTurma(idTurma)
 
 const criarAluno = (aluno) => {
 
@@ -17,25 +19,21 @@ const criarAluno = (aluno) => {
     const linkRouteStudentName = document.createElement('a')
     linkRouteStudentName.classList.add('link-route-student')
     linkRouteStudentName.setAttribute('href', '../pages/tasks.html')
-    linkRouteStudentName.textContent = aluno.nome
-    linkRouteStudentName.title = aluno.nome
+    linkRouteStudentName.textContent = aluno.nome_aluno
+    linkRouteStudentName.title = aluno.nome_aluno
     linkRouteStudentName.addEventListener('click', () => {
-        localStorage.setItem('nomeAluno', aluno.nome)
-        localStorage.setItem('turmaAluno', 'DS2T')
+        localStorage.setItem('nomeAluno', aluno.nome_aluno)
+        localStorage.setItem('turmaAluno', aluno.sigla_turma)
     })
 
     const textContentEmail = document.createElement('li')
     textContentEmail.classList.add('text-content-email')
-    textContentEmail.textContent = aluno.email
-    textContentEmail.title = aluno.email
+    textContentEmail.textContent = aluno.email_aluno
+    textContentEmail.title = aluno.email_aluno
 
     const textContentClass = document.createElement('li')
     textContentClass.classList.add('text-content-class')
-    textContentClass.textContent = 'DS2T'
-
-    const textContentDiscipline = document.createElement('li')
-    textContentDiscipline.classList.add('text-content')
-    textContentDiscipline.textContent = 'DS2T'
+    textContentClass.textContent = aluno.sigla_turma
 
     const buttonsList = document.createElement('ul')
     buttonsList.classList.add('list-buttons')
