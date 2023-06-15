@@ -360,9 +360,9 @@ export const preencherDadosCriterios = async () => {
 }
 
 export const preencherDadosCriteriosPeloIdTarefa = async (idTarefa) => {
-  const url = `https://projeto-mecanica.cyclic.app/v1/mecanica/registro/tempo/tarefa/idTarefa/${idTarefa}`
+  const url = `https://projeto-mecanica.cyclic.app/v1/mecanica/tarefa/idTarefa/${idTarefa}`
   const response = await fetch(url)
   const data = await response.json()
 
-  return data.registros_de_tempo_tarefa
+  return data.detalhes_da_tarefa
 }
