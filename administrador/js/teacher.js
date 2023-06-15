@@ -34,9 +34,9 @@ const criarProfessor = (professor) => {
         localStorage.setItem('idDoProfessor', professor.id)
 
         document.getElementById('name-professor-edit').value = professor.nome
+        document.getElementById('data_nascimento-professor-edit').value = professor.data_nascimento
         document.getElementById('email-professor-edit').value = professor.email
         document.getElementById('nife-professor-edit').value = professor.nife
-        document.getElementById('data_nascimento-professor-edit').value = professor.data_nascimento
         document.getElementById('nome_materia-professor-edit').value = professor.id_materia
         document.getElementById('tipo_usuario-professor-edit').value = professor.id_usuario
 
@@ -63,9 +63,9 @@ const insertCardProfessor = () => {
     buttonSalvar.addEventListener('click', () => {
 
         const nomeProfessor = document.getElementById('name-professor').value
+        const dataDeNascimentoProfessor = document.getElementById('data_nascimento-professor').value
         const emailProfessor = document.getElementById('email-professor').value
         const nifeProfessor = document.getElementById('nife-professor').value
-        const dataDeNascimentoProfessor = document.getElementById('data_nascimento-professor').value
         const nomeMateriaProfessor = document.getElementById('nome_materia-professor').value
         const tipoUsuarioProfessor = document.getElementById('tipo_usuario-professor').value
     
@@ -77,9 +77,9 @@ const insertCardProfessor = () => {
 
             const professor = {
                 "nome": `${nomeProfessor}`,
+                "data_nascimento": `${dataDeNascimentoProfessor}`,
                 "email": `${emailProfessor}`,
                 "nife": `${nifeProfessor}`,
-                "data_nascimento": `${dataDeNascimentoProfessor}`,
                 "id_materia": `${nomeMateriaProfessor}`,
                 "id_usuario": `${tipoUsuarioProfessor}`,
             }
@@ -97,9 +97,9 @@ const updateCardProfessores = () => {
     buttonEditar.addEventListener("click", () => {
 
         const nomeProfessor = document.getElementById('name-professor-edit').value
+        const dataDeNascimentoProfessor = document.getElementById('data_nascimento-professor-edit').value
         const emailProfessor = document.getElementById('email-professor-edit').value
         const nifeProfessor = document.getElementById('nife-professor-edit').value
-        const dataDeNascimentoProfessor = document.getElementById('data_nascimento-professor-edit').value
         const nomeMateriaProfessor = document.getElementById('nome_materia-professor-edit').value
         const tipoUsuarioProfessor = document.getElementById('tipo_usuario-professor-edit').value
 
@@ -124,6 +124,6 @@ const carregarProfessor = () => {
     container.replaceChildren(...lines)
 }
 
+carregarProfessor()
 updateCardProfessores()
 insertCardProfessor()
-carregarProfessor()

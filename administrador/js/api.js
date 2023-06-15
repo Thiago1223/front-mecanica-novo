@@ -199,14 +199,14 @@ export const criarDadosDisciplinas = async (materia) => {
     })
 }
 
-export const atualizarDadosDisciplinas = async (turma) => {
-  const url = `https://projeto-mecanica.cyclic.app/v1/mecanica/turma/${turma.id}`
+export const atualizarDadosDisciplinas = async (materia) => {
+  const url = `https://projeto-mecanica.cyclic.app/v1/mecanica/materia/${materia.id}`
   const options = {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(turma)
+    body: JSON.stringify(materia)
   }
 
   fetch(url, options)
@@ -224,7 +224,7 @@ export const atualizarDadosDisciplinas = async (turma) => {
 }
 
 export const deletarDadosDisciplinas = async (idDisciplina) => {
-  const url = `https://projeto-mecanica.cyclic.app/v1/mecanica/turma/${idDisciplina}`
+  const url = `https://projeto-mecanica.cyclic.app/v1/mecanica/materia/${idDisciplina}`
   const options = {
     method: 'DELETE'
   }

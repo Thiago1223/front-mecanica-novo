@@ -30,9 +30,9 @@ const criarCardDisciplina = (disciplina) => {
     buttonEdit.href = '#modal-container-edit'
     buttonEdit.addEventListener('click', () => {
         localStorage.setItem('idDaDisciplina', disciplina.id)
-
-        document.getElementById('name-disciplina-edit').value = disciplina.nome
-        document.getElementById('sigla-disciplina-edit').value = disciplina.sigla
+        
+        document.getElementById('name-disciplina-edit').value = disciplina.nome_materia
+        document.getElementById('sigla-disciplina-edit').value = disciplina.sigla_materia
     })
 
     const imgEdit = document.createElement('img')
@@ -73,8 +73,8 @@ const insertCardDisciplina = () => {
         } else {
 
             const disciplina = {
-                "nome": `${nomeDisciplina}`,
-                "sigla": `${siglaDisciplina}`,
+                "nome_materia": `${nomeDisciplina}`,
+                "sigla_materia": `${siglaDisciplina}`,
             }
 
             criarDadosDisciplinas(disciplina)
@@ -95,12 +95,11 @@ const updateCardDisciplina = () => {
 
         const dadosAtualizado = {
             "id": idDisciplina,
-            "nome": `${nomeDisciplina}`,
-            "sigla": `${siglaDisciplina}`
+            "nome_materia": `${nomeDisciplina}`,
+            "sigla_materia": `${siglaDisciplina}`
         }
 
         atualizarDadosDisciplinas(dadosAtualizado)
-
     })
 }
 

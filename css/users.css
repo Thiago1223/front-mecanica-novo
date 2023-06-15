@@ -506,6 +506,36 @@ header{
         height: 18px;
         font-size: .5rem;
     }
+    .modal-content-delete{
+        width: 100%;
+        height: 100%;
+    }
+    .title-modal{
+        font-size: 2rem;
+    }
+    .textfield-container p{
+        font-size: 1.4rem;
+    }
+    .input-container{
+        flex-direction: column;
+    }
+    .buttons-modal{
+        gap: 32px;
+    }
+    .save-modal{
+        width: 110px;
+        height: 32px;
+        font-size: 1.2rem;
+    }
+    .close-modal{
+        width: 110px;
+        height: 32px;
+        font-size: 1.2rem;
+    }
+    .textfield-login{
+        width: 360px;
+        height: 48px;
+    }
     .buttons-container img{
         width: 24px;
     }
