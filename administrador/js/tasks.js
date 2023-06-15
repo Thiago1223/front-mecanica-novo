@@ -43,6 +43,9 @@ const criarCardTarefa = (tarefa) => {
     card.classList.add('button')
     card.textContent = tarefa.nome_tarefa
     card.href = '../pages/results_tasks.html'
+    card.addEventListener('click', () => {
+        localStorage.setItem('idDaTarefa', tarefa.id)
+    })
 
     const container = document.getElementById('container_tasks')
     container.replaceChildren(criarHeaderTarefa())
