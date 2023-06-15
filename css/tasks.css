@@ -83,6 +83,8 @@ body{
 .buttons-container-card{
     display: flex;
     width: 100%;
+    height: 72px;
+    align-items: center;
     background-color: var(--secondary-color);
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 0px 0px 8px 8px;

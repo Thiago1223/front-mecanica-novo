@@ -1,16 +1,11 @@
 'use strict'
 
-import { criarDadosDisciplinas, preencherDadosDisciplinas, atualizarDadosDisciplinas, deletarDadosDisciplinas } from "./api.js"
-
-const disciplinas = await preencherDadosDisciplinas()
-
-import { preencherDadosDisciplinasPeloIdTurma } from "./api.js"
+import { criarDadosDisciplinas, preencherDadosDisciplinasPeloIdTurma, atualizarDadosDisciplinas, deletarDadosDisciplinas } from "./api.js"
 
 const idTurma = localStorage.getItem('idDaTurma')
+const idDisciplina = localStorage.getItem('idDaDisciplina')
 const disciplinas = await preencherDadosDisciplinasPeloIdTurma(idTurma)
 
-
-const idDisciplina = localStorage.getItem('idDaDisciplina')
 const criarCardDisciplina = (disciplina) => {
 
     const card = document.createElement('div')

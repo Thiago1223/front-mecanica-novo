@@ -4,7 +4,8 @@ import { preencherDadosTarefasPeloIdDisciplina } from "./api.js"
 
 const nameStudent = localStorage.getItem('nomeAluno')
 const classStudent = localStorage.getItem('turmaAluno')
-const tarefas = await preencherDadosTarefasPeloIdDisciplina()
+const idDisciplina = localStorage.getItem('idDaDisciplina')
+const tarefas = await preencherDadosTarefasPeloIdDisciplina(idDisciplina)
 
 const criarHeaderTarefa = () => {
 
@@ -19,7 +20,7 @@ const criarHeaderTarefa = () => {
 
     const numberTasks = document.createElement('span')
     numberTasks.classList.add('number_tasks')
-    numberTasks.textContent = '3'
+    numberTasks.textContent = tarefas.length
 
     const textTasks = document.createElement('p')
     textTasks.classList.add('text_tasks')
@@ -40,7 +41,7 @@ const criarCardTarefa = (tarefa) => {
 
     const card = document.createElement('a')
     card.classList.add('button')
-    card.textContent = tarefa.nome
+    card.textContent = tarefa.nome_tarefa
     card.href = '../pages/results_tasks.html'
 
     const container = document.getElementById('container_tasks')
