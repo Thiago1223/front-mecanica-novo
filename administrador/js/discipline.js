@@ -1,16 +1,11 @@
 'use strict'
 
-import { criarDadosDisciplinas, preencherDadosDisciplinas, atualizarDadosDisciplinas, deletarDadosDisciplinas } from "./api.js"
-
-const disciplinas = await preencherDadosDisciplinas()
-
-import { preencherDadosDisciplinasPeloIdTurma } from "./api.js"
+import { criarDadosDisciplinas, preencherDadosDisciplinasPeloIdTurma, atualizarDadosDisciplinas, deletarDadosDisciplinas } from "./api.js"
 
 const idTurma = localStorage.getItem('idDaTurma')
+const idDisciplina = localStorage.getItem('idDaDisciplina')
 const disciplinas = await preencherDadosDisciplinasPeloIdTurma(idTurma)
 
-
-const idDisciplina = localStorage.getItem('idDaDisciplina')
 const criarCardDisciplina = (disciplina) => {
 
     const card = document.createElement('div')
@@ -33,9 +28,9 @@ const criarCardDisciplina = (disciplina) => {
     buttonEdit.href = '#modal-container-edit'
     buttonEdit.addEventListener('click', () => {
         localStorage.setItem('idDaDisciplina', disciplina.id)
-
-        document.getElementById('name-disciplina-edit').value = disciplina.nome
-        document.getElementById('sigla-disciplina-edit').value = disciplina.sigla
+        
+        document.getElementById('name-disciplina-edit').value = disciplina.nome_materia
+        document.getElementById('sigla-disciplina-edit').value = disciplina.sigla_materia
     })
 
     const imgEdit = document.createElement('img')
@@ -76,8 +71,8 @@ const insertCardDisciplina = () => {
         } else {
 
             const disciplina = {
-                "nome": `${nomeDisciplina}`,
-                "sigla": `${siglaDisciplina}`,
+                "nome_materia": `${nomeDisciplina}`,
+                "sigla_materia": `${siglaDisciplina}`,
             }
 
             criarDadosDisciplinas(disciplina)
@@ -98,12 +93,11 @@ const updateCardDisciplina = () => {
 
         const dadosAtualizado = {
             "id": idDisciplina,
-            "nome": `${nomeDisciplina}`,
-            "sigla": `${siglaDisciplina}`
+            "nome_materia": `${nomeDisciplina}`,
+            "sigla_materia": `${siglaDisciplina}`
         }
 
         atualizarDadosDisciplinas(dadosAtualizado)
-
     })
 }
 

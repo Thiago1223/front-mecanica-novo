@@ -2,7 +2,7 @@
 
 // ----------------- CURSOS ------------------------------
 export const preencherDadosCursos = async () => {
-  const url = `http://localhost:8080/v1/mecanica/cursos`
+  const url = `https://projeto-mecanica.cyclic.app/v1/mecanica/cursos`
   const response = await fetch(url)
   const data = await response.json()
 
@@ -10,7 +10,7 @@ export const preencherDadosCursos = async () => {
 }
 
 export const criarDadosCursos = async (curso) => {
-  const url = `http://localhost:8080/v1/mecanica/curso`
+  const url = `https://projeto-mecanica.cyclic.app/v1/mecanica/curso`
   const options = {
     method: 'POST',
     headers: {
@@ -34,7 +34,7 @@ export const criarDadosCursos = async (curso) => {
 }
 
 export const atualizarDadosCursos = async (curso) => {
-  const url = `http://localhost:8080/v1/mecanica/curso/${curso.id}`
+  const url = `https://projeto-mecanica.cyclic.app/v1/mecanica/curso/${curso.id}`
   const options = {
     method: 'PUT',
     headers: {
@@ -58,7 +58,7 @@ export const atualizarDadosCursos = async (curso) => {
 }
 
 export const deletarDadosCursos = async (idCurso) => {
-  const url = `http://localhost:8080/v1/mecanica/curso/${idCurso}`
+  const url = `https://projeto-mecanica.cyclic.app/v1/mecanica/curso/${idCurso}`
   const options = {
     method: 'DELETE'
   }
@@ -78,7 +78,7 @@ export const deletarDadosCursos = async (idCurso) => {
 
 // ----------------- TURMAS ------------------------------
 export const preencherDadosTurmas = async () => {
-  const url = `http://localhost:8080/v1/mecanica/turmas`
+  const url = `https://projeto-mecanica.cyclic.app/v1/mecanica/turmas`
   const response = await fetch(url)
   const data = await response.json()
 
@@ -86,7 +86,7 @@ export const preencherDadosTurmas = async () => {
 }
 
 export const preencherDadosTurmasPeloIdCurso = async (idCurso) => {
-  const url = `http://localhost:8080/v1/mecanica/turma/idCurso/${idCurso}`
+  const url = `https://projeto-mecanica.cyclic.app/v1/mecanica/turma/idCurso/${idCurso}`
   const response = await fetch(url)
   const data = await response.json()
 
@@ -94,7 +94,7 @@ export const preencherDadosTurmasPeloIdCurso = async (idCurso) => {
 }
 
 export const criarDadosTurmas = async (turma) => {
-  const url = `http://localhost:8080/v1/mecanica/turma`
+  const url = `https://projeto-mecanica.cyclic.app/v1/mecanica/turma`
   const options = {
     method: 'POST',
     headers: {
@@ -117,7 +117,7 @@ export const criarDadosTurmas = async (turma) => {
 }
 
 export const atualizarDadosTurmas = async (turma) => {
-  const url = `http://localhost:8080/v1/mecanica/turma/${turma.id}`
+  const url = `https://projeto-mecanica.cyclic.app/v1/mecanica/turma/${turma.id}`
   const options = {
     method: 'PUT',
     headers: {
@@ -141,7 +141,7 @@ export const atualizarDadosTurmas = async (turma) => {
 }
 
 export const deletarDadosTurmas = async (idTurma) => {
-  const url = `http://localhost:8080/v1/mecanica/turma/${idTurma}`
+  const url = `https://projeto-mecanica.cyclic.app/v1/mecanica/turma/${idTurma}`
   const options = {
     method: 'DELETE'
   }
@@ -161,7 +161,7 @@ export const deletarDadosTurmas = async (idTurma) => {
 
 // ---------------- DISCIPLINAS --------------------------
 export const preencherDadosDisciplinas = async () => {
-  const url = `http://localhost:8080/v1/mecanica/materias`
+  const url = `https://projeto-mecanica.cyclic.app/v1/mecanica/materias`
   const response = await fetch(url)
   const data = await response.json()
 
@@ -169,7 +169,7 @@ export const preencherDadosDisciplinas = async () => {
 }
 
 export const preencherDadosDisciplinasPeloIdTurma = async (idTurma) => {
-  const url = `http://localhost:8080/v1/mecanica/materia/idTurma/${idTurma}`
+  const url = `https://projeto-mecanica.cyclic.app/v1/mecanica/materia/idTurma/${idTurma}`
   const response = await fetch(url)
   const data = await response.json()
 
@@ -177,7 +177,7 @@ export const preencherDadosDisciplinasPeloIdTurma = async (idTurma) => {
 }
 
 export const criarDadosDisciplinas = async (materia) => {
-  const url = `http://localhost:8080/v1/mecanica/materia`
+  const url = `https://projeto-mecanica.cyclic.app/v1/mecanica/materia`
   const options = {
     method: 'POST',
     headers: {
@@ -199,14 +199,14 @@ export const criarDadosDisciplinas = async (materia) => {
     })
 }
 
-export const atualizarDadosDisciplinas = async (turma) => {
-  const url = `http://localhost:8080/v1/mecanica/turma/${turma.id}`
+export const atualizarDadosDisciplinas = async (materia) => {
+  const url = `https://projeto-mecanica.cyclic.app/v1/mecanica/materia/${materia.id}`
   const options = {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(turma)
+    body: JSON.stringify(materia)
   }
 
   fetch(url, options)
@@ -224,7 +224,7 @@ export const atualizarDadosDisciplinas = async (turma) => {
 }
 
 export const deletarDadosDisciplinas = async (idDisciplina) => {
-  const url = `http://localhost:8080/v1/mecanica/turma/${idDisciplina}`
+  const url = `https://projeto-mecanica.cyclic.app/v1/mecanica/materia/${idDisciplina}`
   const options = {
     method: 'DELETE'
   }
@@ -244,7 +244,7 @@ export const deletarDadosDisciplinas = async (idDisciplina) => {
 
 // ----------------- ALUNOS ------------------------------
 export const preencherDadosAlunos = async () => {
-  const url = `http://localhost:8080/v1/mecanica/aluno`
+  const url = `https://projeto-mecanica.cyclic.app/v1/mecanica/aluno`
   const response = await fetch(url)
   const data = await response.json()
 
@@ -252,7 +252,7 @@ export const preencherDadosAlunos = async () => {
 }
 
 export const preencherDadosAlunosPeloIdTurma = async (idTurma) => {
-  const url = `http://localhost:8080/v1/mecanica/alunos/turma/idTurma/${idTurma}`
+  const url = `https://projeto-mecanica.cyclic.app/v1/mecanica/alunos/turma/idTurma/${idTurma}`
   const response = await fetch(url)
   const data = await response.json()
 
@@ -261,7 +261,7 @@ export const preencherDadosAlunosPeloIdTurma = async (idTurma) => {
 
 // ---------------- TAREFAS ------------------------------
 export const preencherDadosTarefas = async () => {
-  const url = `http://localhost:8080/v1/mecanica/tarefas`
+  const url = `https://projeto-mecanica.cyclic.app/v1/mecanica/tarefas`
   const response = await fetch(url)
   const data = await response.json()
 
@@ -269,7 +269,7 @@ export const preencherDadosTarefas = async () => {
 }
 
 export const preencherDadosTarefasPeloIdDisciplina = async (idDisciplina) => {
-  const url = `http://localhost:8080/v1/mecanica/tarefa/materia/idMateria/${idDisciplina}`
+  const url = `https://projeto-mecanica.cyclic.app/v1/mecanica/tarefa/materia/idMateria/${idDisciplina}`
   const response = await fetch(url)
   const data = await response.json()
 
@@ -277,8 +277,16 @@ export const preencherDadosTarefasPeloIdDisciplina = async (idDisciplina) => {
 }
 
 // ---------------- PROFESSORES ------------------------------
+export const preencherDadosProfessores = async () => {
+  const url = `https://projeto-mecanica.cyclic.app/v1/mecanica/professor`
+  const response = await fetch(url)
+  const data = await response.json()
+
+  return data.professor
+}
+
 export const criarDadosProfessores = async (professor) => {
-  const url = `http://localhost:8080/v1/mecanica/professor`
+  const url = `https://projeto-mecanica.cyclic.app/v1/mecanica/professor`
   const options = {
     method: 'POST',
     headers: {
@@ -301,7 +309,7 @@ export const criarDadosProfessores = async (professor) => {
 }
 
 export const atualizarDadosProfessores = async (professor) => {
-  const url = `http://localhost:8080/v1/mecanica/professor/${professor.id}`
+  const url = `https://projeto-mecanica.cyclic.app/v1/mecanica/professor/${professor.id}`
   const options = {
     method: 'PUT',
     headers: {
@@ -324,7 +332,7 @@ export const atualizarDadosProfessores = async (professor) => {
 }
 
 export const deletarDadosProfessores = async (idProfessor) => {
-  const url = `http://localhost:8080/v1/mecanica/professor/${idProfessor}`
+  const url = `https://projeto-mecanica.cyclic.app/v1/mecanica/professor/${idProfessor}`
   const options = {
     method: 'DELETE'
   }
@@ -340,4 +348,21 @@ export const deletarDadosProfessores = async (idProfessor) => {
     .catch(error => {
       console.log('Ocorreu um erro na requisição:', error)
     })
+}
+
+// ---------------- CRITÉRIOS ------------------------------
+export const preencherDadosCriterios = async () => {
+  const url = `https://projeto-mecanica.cyclic.app/v1/mecanica/criterios`
+  const response = await fetch(url)
+  const data = await response.json()
+
+  return data.criterios
+}
+
+export const preencherDadosCriteriosPeloIdTarefa = async (idTarefa) => {
+  const url = `https://projeto-mecanica.cyclic.app/v1/mecanica/registro/tempo/tarefa/idTarefa/${idTarefa}`
+  const response = await fetch(url)
+  const data = await response.json()
+
+  return data.registros_de_tempo_tarefa
 }
