@@ -83,5 +83,4 @@ const carregarCriterio = () => {
     container.replaceChildren(...lines)
 }
 
-// criarHeaderCriterio()
 carregarCriterio()

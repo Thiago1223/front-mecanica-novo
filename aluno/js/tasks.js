@@ -48,8 +48,13 @@ const criarCardTarefa = (tarefa) => {
         localStorage.setItem('nomeDaTarefa', tarefa.nome_tarefa)
     })
 
+    const bottomContainer = document.createElement('div')
+    bottomContainer.classList.add('buttons-container-card')
+
     const container = document.getElementById('container_tasks')
     container.replaceChildren(criarHeaderTarefa())
+
+    card.append(bottomContainer)
 
     return card
 
