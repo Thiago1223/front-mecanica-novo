@@ -248,7 +248,7 @@ export const preencherDadosAlunos = async () => {
   const response = await fetch(url)
   const data = await response.json()
 
-  return data.alunos
+  return data.aluno
 }
 
 export const preencherDadosAlunosPeloIdTurma = async (idTurma) => {
@@ -259,6 +259,71 @@ export const preencherDadosAlunosPeloIdTurma = async (idTurma) => {
   return data.alunosDaTurma
 }
 
+export const criarDadosAlunos = async (aluno) => {
+  const url = `https://projeto-mecanica.cyclic.app/v1/mecanica/aluno`
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(aluno)
+  }
+
+  fetch(url, options)
+    .then(response => {
+      if (response.ok) {
+        location.reload()
+      } else {
+        console.log('Erro ao criar a aluno.')
+      }
+    })
+    .catch(error => {
+      console.log('Ocorreu um erro na requisição:', error)
+    })
+}
+
+export const atualizarDadosAlunos = async (aluno) => {
+  const url = `https://projeto-mecanica.cyclic.app/v1/mecanica/aluno/${aluno.id}`
+  const options = {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(aluno)
+  }
+
+  fetch(url, options)
+    .then(response => {
+      if (response.ok) {
+        location.reload()
+      } else {
+        console.log('Erro ao atualizar a aluno.')
+      }
+    })
+    .catch(error => {
+      console.log('Ocorreu um erro na requisição:', error)
+    })
+
+}
+
+export const deletarDadosAlunos = async (idAluno) => {
+  const url = `https://projeto-mecanica.cyclic.app/v1/mecanica/materia/${idAluno}`
+  const options = {
+    method: 'DELETE'
+  }
+
+  fetch(url, options)
+    .then(response => {
+      if (response.ok) {
+        location.reload()
+      } else {
+        console.log('Erro ao deletar a aluno.')
+      }
+    })
+    .catch(error => {
+      console.log('Ocorreu um erro na requisição:', error)
+    })
+}
 // ---------------- TAREFAS ------------------------------
 export const preencherDadosTarefas = async () => {
   const url = `https://projeto-mecanica.cyclic.app/v1/mecanica/tarefas`
@@ -360,9 +425,9 @@ export const preencherDadosCriterios = async () => {
 }
 
 export const preencherDadosCriteriosPeloIdTarefa = async (idTarefa) => {
-  const url = `https://projeto-mecanica.cyclic.app/v1/mecanica/registro/tempo/tarefa/idTarefa/${idTarefa}`
+  const url = `https://projeto-mecanica.cyclic.app/v1/mecanica/tarefa/idTarefa/${idTarefa}`
   const response = await fetch(url)
   const data = await response.json()
 
-  return data.registros_de_tempo_tarefa
+  return data.detalhes_da_tarefa
 }

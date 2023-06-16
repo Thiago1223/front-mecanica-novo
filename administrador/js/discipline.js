@@ -11,6 +11,8 @@ const criarCardDisciplina = (disciplina) => {
     const card = document.createElement('div')
     card.classList.add('card')
 
+    console.log(disciplina.id)
+
     const topContainer = document.createElement('a')
     topContainer.classList.add('top-container')
     topContainer.setAttribute('href', '../pages/students.html')

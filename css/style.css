@@ -4,6 +4,10 @@
     --terciary-color: #EC2D2D;
     --primary-font: 'Montserrat', sans-serif;
 }
+.profile-container .fa-arrow-right-to-bracket:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
 .link-route{
     position: absolute;
     width: 100%;
