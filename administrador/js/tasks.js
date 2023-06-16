@@ -45,6 +45,7 @@ const criarCardTarefa = (tarefa) => {
     card.href = '../pages/results_tasks.html'
     card.addEventListener('click', () => {
         localStorage.setItem('idDaTarefa', tarefa.id_tarefa)
+        localStorage.setItem('nomeDaTarefa', tarefa.nome_tarefa)
     })
 
     const container = document.getElementById('container_tasks')
